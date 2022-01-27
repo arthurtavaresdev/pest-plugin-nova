@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Pest\PluginName;
+namespace ArthurTavaresDev\PestPluginNova;
 
+use ArthurTavaresDev\PestPluginNova\Example;
 use Pest\Plugin;
 use PHPUnit\Framework\TestCase;
 

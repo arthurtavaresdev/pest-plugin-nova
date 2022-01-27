@@ -1,6 +1,6 @@
 {
-    "name": "pestphp/pest-plugin-template",
-    "description": "My awesome plugin",
+    "name": "pestphp/pest-plugin-nova",
+    "description": "Pest Plugin for Laravel Nova",
     "keywords": [
         "php",
         "framework",
@@ -8,17 +8,19 @@
         "unit",
         "test",
         "testing",
-        "plugin"
+        "plugin",
+        "nova",
+        "laravel"
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3 || ^8.0",
+        "php": "^8.0",
         "pestphp/pest": "^1.0",
         "pestphp/pest-plugin": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "Pest\\PluginName\\": "src/"
+            "ArthurTavaresDev\\PestPluginNova\\": "src/"
         },
         "files": [
             "src/Autoload.php"
