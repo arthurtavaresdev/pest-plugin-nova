@@ -56,6 +56,28 @@ test('index orders')
     ...
 ```
 
+### Expectations
+
+[WIP]
+```php
+    test('can index orders', function () {
+       expect($this->novaIndex('orders')
+           ->toBeCardsCount(3)
+           ->toBeCardInclude(OrderAmountPerDay::class)
+   });
+
+    test('can update order', function () {
+       expect($this->novaEdit('orders', Order::factory()->create()->id))
+           ->toBeField('merchant')
+           ->toBeField('shopper')
+           ->toBeField('amount')
+           ->toBeField('created_at')
+           ->toBeField('tags');
+   });
+});
+
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.

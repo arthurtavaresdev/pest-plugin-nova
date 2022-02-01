@@ -69,19 +69,6 @@ expect()->extend(
 );
 
 expect()->extend(
-    'toBeCardInclude',
-    /**
-     * Assert that the response has a successful status code.
-     */
-    function (string|Laravel\Nova\Card $card): Expectation {
-        $response = getNovaResponse($this);
-        $response->assertCardsInclude($card);
-
-        return $this;
-    }
-);
-
-expect()->extend(
     'toBeField',
     /**
      * Assert that the response has a successful status code.
