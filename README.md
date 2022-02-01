@@ -15,19 +15,18 @@ composer require --dev arthurtavaresdev/pest-plugin-nova
 
 ## Usage
 
-Once the plugin is installed you are ready to go! Combine the elegant syntax of [Pest](https://pestphp.com/docs/writing-tests) and [Octane Testbench](https://github.com/cerbero90/octane-testbench#usage):
+Once the plugin is installed you are ready to go! Combine the elegant syntax of [Pest](https://pestphp.com/docs/writing-tests) and [Nova Assertions](https://github.com/dillingham/nova-assertions#usage):
 
 ```php
-test('Octane application')
-    ->assertOctaneCacheMissing('foo')
-    ->assertOctaneTableMissing('example', 'row')
-    ->assertOctaneTableCount('example', 0)
-    ->expectsConcurrencyResults([1, 2, 3])
-    ->get('octane/route')
-    ->assertOk()
-    ->assertOctaneCacheHas('foo', 'bar')
-    ->assertOctaneTableHas('example', 'row.votes', 123)
-    ->assertOctaneTableCount('example', 1);
+test('Admin Panel')
+    ->assertResources(fn($resources) => $resources->count() > 0)
+    ->assertCardCount(5)
+    ->assertCardsInclude(Card::class)
+    ->assertCardsInclude(Card::class)
+    ->assertActionCount(5)
+    ->assertFiltersIncludes(Filter::class)
+    ->assertLensCount(5)
+    ...
 ```
 
 ## Change log
