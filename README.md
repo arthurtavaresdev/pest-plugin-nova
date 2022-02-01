@@ -1,9 +1,74 @@
-This repository contains the Pest Plugin Template.
+# Laravel Nova (Pest Plugin)
 
-> If you want to start testing your application with Pest, visit the main **[Pest Repository](https://github.com/pestphp/pest)**.
+[![Author][ico-author]][link-author]
+[![PHP Version][ico-php]][link-php]
+[![Laravel Version][ico-laravel]][link-laravel]
 
-- Explore the docs: **[pestphp.com/docs/plugins/creating-plugins »](https://pestphp.com/docs/plugins/creating-plugins)**
-- Follow us on Twitter: **[@pestphp »](https://twitter.com/pestphp)**
-- Join us on the Discord Server: **[discord.gg/bMAJv82 »](https://discord.gg/bMAJv82)**
+## Install
 
-Pest was created by **[Nuno Maduro](https://twitter.com/enunomaduro)** under the **[Sponsorware license](https://github.com/sponsorware/docs)**. It got open-sourced and is now licensed under the **[MIT license](https://opensource.org/licenses/MIT)**.
+Via Composer
+
+``` bash
+composer require --dev arthurtavaresdev/pest-plugin-nova
+```
+
+## Usage
+
+Once the plugin is installed you are ready to go! Combine the elegant syntax of [Pest](https://pestphp.com/docs/writing-tests) and [Octane Testbench](https://github.com/cerbero90/octane-testbench#usage):
+
+```php
+test('Octane application')
+    ->assertOctaneCacheMissing('foo')
+    ->assertOctaneTableMissing('example', 'row')
+    ->assertOctaneTableCount('example', 0)
+    ->expectsConcurrencyResults([1, 2, 3])
+    ->get('octane/route')
+    ->assertOk()
+    ->assertOctaneCacheHas('foo', 'bar')
+    ->assertOctaneTableHas('example', 'row.votes', 123)
+    ->assertOctaneTableCount('example', 1);
+```
+
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Testing
+
+``` bash
+composer test
+```
+
+## Contributing
+Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details.
+
+## Security
+If you discover any security related issues, please email arthurabreu00@gmail.com instead of using the issue tracker.
+
+## Credits
+
+- [Arthur Tavares][link-author]
+- [All Contributors][link-contributors]
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[ico-author]: https://img.shields.io/static/v1?label=author&message=arthurabreu00&color=50ABF1&logo=twitter&style=flat-square
+[ico-php]: https://img.shields.io/packagist/php-v/arthurtavaresdev/pest-plugin-nova?color=%234F5B93&logo=php&style=flat-square
+[ico-laravel]: https://img.shields.io/static/v1?label=laravel&message=%E2%89%A58.0&color=ff2d20&logo=laravel&style=flat-square
+[ico-nova]: https://img.shields.io/static/v1?label=Nova&message=compatible&color=ff2d20&logo=laravel&style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/arthurtavaresdev/pest-plugin-nova.svg?label=version&style=flat-square
+[ico-actions]: https://img.shields.io/github/workflow/status/arthurtavaresdev/pest-plugin-laravel-octane/build?style=flat-square&logo=github
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-psr12]: https://img.shields.io/static/v1?label=compliance&message=PSR-12&color=blue&style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/arthurtavaresdev/pest-plugin-nova.svg?style=flat-square
+
+[link-author]: https://twitter.com/arthurabreu00
+[link-php]: https://www.php.net
+[link-laravel]: https://laravel.com
+[link-packagist]: https://packagist.org/packages/arthurtavaresdev/pest-plugin-nova
+[link-actions]: https://github.com/arthurtavaresdev/pest-plugin-nova/actions?query=workflow%3Abuild
+[link-psr12]: https://www.php-fig.org/psr/psr-12/
+[link-downloads]: https://packagist.org/packages/arthurtavaresdev/pest-plugin-nova
+[link-contributors]: ../../contributors
