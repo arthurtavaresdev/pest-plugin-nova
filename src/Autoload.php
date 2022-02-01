@@ -7,6 +7,10 @@ namespace ArthurTavaresDev\PestPluginNova;
 use NovaTesting\NovaAssertions;
 use Pest\Plugin;
 
+
 // @codeCoverageIgnoreStart
 Plugin::uses(NovaAssertions::class);
 // @codeCoverageIgnoreEnd
+
+
+//require_once 'NovaExpectations.php';
