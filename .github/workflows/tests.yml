@@ -29,6 +29,9 @@ jobs:
         echo "::add-matcher::${{ runner.tool_cache }}/php.json"
         echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
+    - name: Configures Nova Repository
+      run: composer config http-basic.nova.laravel.com ${{secrets.NOVA_USERNAME}} ${{secrets.NOVA_PASSWORD}}
+
     - name: Install PHP dependencies
       run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
