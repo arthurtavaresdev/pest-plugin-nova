@@ -19,6 +19,10 @@ jobs:
         tools: composer:v2
         coverage: none
 
+    - name: Configures Nova Repository
+      run: composer config http-basic.nova.laravel.com ${{secrets.NOVA_USERNAME}} ${{secrets.NOVA_PASSWORD}}
+
+
     - name: Install Dependencies
       run: composer update --no-interaction --no-progress --ansi
 
