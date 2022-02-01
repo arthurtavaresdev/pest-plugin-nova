@@ -18,6 +18,11 @@ composer require --dev arthurtavaresdev/pest-plugin-nova
 Once the plugin is installed you are ready to go! Combine the elegant syntax of [Pest](https://pestphp.com/docs/writing-tests) and [Nova Assertions](https://github.com/dillingham/nova-assertions#usage):
 
 ```php
+beforeEach(function () {
+    Order::factory()->count(10)->create();
+    $this->be(User::factory()->create());
+});
+
 test('index orders')
     ->novaIndex('orders')
     ->assertOk()
