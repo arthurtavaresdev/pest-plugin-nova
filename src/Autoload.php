@@ -13,4 +13,4 @@ Plugin::uses(NovaAssertions::class);
 // @codeCoverageIgnoreEnd
 
 
-//require_once 'NovaExpectations.php';
+require_once 'NovaExpectations.php';

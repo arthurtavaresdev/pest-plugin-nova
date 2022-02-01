@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Http\Response;
+use Illuminate\Support\Collection;
 use Illuminate\Testing\TestResponse;
 use NovaTesting\NovaResponse;
 use Pest\Expectation;
@@ -62,6 +63,32 @@ expect()->extend(
     function (string|Laravel\Nova\Card $card): Expectation {
         $response = getNovaResponse($this);
         $response->assertCardsInclude($card);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeCardInclude',
+    /**
+     * Assert that the response has a successful status code.
+     */
+    function (string|Laravel\Nova\Card $card): Expectation {
+        $response = getNovaResponse($this);
+        $response->assertCardsInclude($card);
+
+        return $this;
+    }
+);
+
+expect()->extend(
+    'toBeField',
+    /**
+     * Assert that the response has a successful status code.
+     */
+    function (Collection|string|array $attribute, mixed $value = null): Expectation {
+        $response = getNovaResponse($this);
+        $response->assertFieldsInclude($attribute, $value);
 
         return $this;
     }
