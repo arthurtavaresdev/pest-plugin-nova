@@ -1,5 +1,5 @@
 {
-    "name": "pestphp/pest-plugin-nova",
+    "name": "arthurtavaresdev/pest-plugin-nova",
     "description": "Pest Plugin for Laravel Nova",
     "keywords": [
         "php",
