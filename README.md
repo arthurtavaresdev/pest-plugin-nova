@@ -58,7 +58,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-author]: https://img.shields.io/static/v1?label=author&message=arthurabreu00&color=50ABF1&logo=twitter&style=flat-square
 [ico-php]: https://img.shields.io/packagist/php-v/arthurtavaresdev/pest-plugin-nova?color=%234F5B93&logo=php&style=flat-square
 [ico-laravel]: https://img.shields.io/static/v1?label=laravel&message=%E2%89%A58.0&color=ff2d20&logo=laravel&style=flat-square
-[ico-nova]: https://img.shields.io/static/v1?label=Nova&message=>=3.0&color=ff2d20&logo=laravel-nova&style=flat-square
+[ico-nova]: https://img.shields.io/static/v1?label=Nova&message=>=3.0&color=4099de&logo=laravel-nova&style=flat-square
 [ico-version]: https://img.shields.io/packagist/v/arthurtavaresdev/pest-plugin-nova.svg?label=version&style=flat-square
 [ico-actions]: https://img.shields.io/github/workflow/status/arthurtavaresdev/pest-plugin-laravel-octane/build?style=flat-square&logo=github
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
