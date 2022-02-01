@@ -18,14 +18,33 @@ composer require --dev arthurtavaresdev/pest-plugin-nova
 Once the plugin is installed you are ready to go! Combine the elegant syntax of [Pest](https://pestphp.com/docs/writing-tests) and [Nova Assertions](https://github.com/dillingham/nova-assertions#usage):
 
 ```php
-test('Admin Panel')
-    ->assertResources(fn($resources) => $resources->count() > 0)
-    ->assertCardCount(5)
-    ->assertCardsInclude(Card::class)
-    ->assertCardsInclude(Card::class)
-    ->assertActionCount(5)
-    ->assertFiltersIncludes(Filter::class)
-    ->assertLensCount(5)
+test('index orders')
+    ->novaIndex('orders')
+    ->assertOk()
+    // assert resources
+    ->assertResources(fn($resources) => $resources->count() === 10)
+    // assert cards
+    ->assertCardCount(3)
+    ->assertCardsInclude(OrderAmountPerDay::class)
+    ->assertCardsInclude(OrderPerMerchant::class)
+    ->assertCardsInclude(OrderPerStatus::class)
+    // assert actions
+    ->assertActionCount(1)
+    ->assertActionsInclude(CancelOrderAction::class)
+    // assert filters
+    ->assertFilterCount(2)
+    ->assertFiltersInclude(OrderStatusFilter::class)
+    ->assertFiltersInclude(MerchantFilter::class)
+    // assert fields
+    ->assertFieldsInclude(['id', 'status', 'amount', 'created_at'])
+    ->assertFieldsExclude(['external_id', 'currency'])
+    // assert policies
+    ->assertCanView()
+    ->assertCanCreate()
+    ->assertCanUpdate()
+    ->assertCanDelete()
+    ->assertCannotForceDelete()
+    ->assertCannotRestore();
     ...
 ```
 
